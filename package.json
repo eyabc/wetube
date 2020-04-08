@@ -5,9 +5,12 @@
   "main": "index.js",
   "author": "eyabc",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon --exec babel-node index.js"
   },
   "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
     "express": "^4.17.1"
   }
 }
