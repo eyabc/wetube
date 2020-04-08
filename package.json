@@ -4,7 +4,9 @@
   "description": "Cloning Youtube with Vanilia and NodeJs",
   "main": "index.js",
   "author": "eyabc",
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "dependencies": {
     "express": "^4.17.1"
   }
