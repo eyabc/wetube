@@ -16,7 +16,7 @@ const VIDEOS = '/videos',
   VIDEO_DETAIL = '/:id',
   UPLOAD_VIDEO = '/upload',
   DELETE_VIDEO = '/:id/delete',
-  EDIT_VIDEO = '/:id/edit-video';
+  EDIT_VIDEO = '/:id/edit';
 
 const routes = {
   home: HOME,
