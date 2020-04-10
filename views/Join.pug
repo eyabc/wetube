@@ -2,7 +2,7 @@ extends layouts/main
 
 block content
     p join!
-    .form__container
+    .form-container
         form(action=routes.join, method="post")
             input(type="text", name="name", placeholder="Full Name")
             input(type="email", name="email", placeholder="Email")
