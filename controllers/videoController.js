@@ -2,8 +2,8 @@ import { videos } from '../db'
 
 export const home = (req, res) => res.render('Home', { pageTitle: "Home", videos });
 export const search = (req, res) => {
-  const { query: { term } } = req;
-  res.render('Search', { pageTitle: "Search", searchingFor: term });
+  const { query: { term: searchingFor } } = req;
+  res.render('Search', { pageTitle: "Search", searchingFor: term, videos });
 };
 export const videoUpload = (req, res) => res.render('VideoUpload', { pageTitle: "VideoUpload" });
 export const videoDetail = (req, res) => res.render('VideoDetail', { pageTitle: "VideoDetail" });
