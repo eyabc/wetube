@@ -27,7 +27,7 @@ const routes = {
 
   users: USERS,
   userDetail: (id) => {
-    if (id) return `/videos/${id}`;
+    if (id) return `/users/${id}`;
     return USER_DETAIL;
   },
   editProfile: EDIT_PROFILE,
