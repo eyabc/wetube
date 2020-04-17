@@ -8,12 +8,6 @@ const CommnetSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now
-  },
-  
-  /* how to 1*/
-  video: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Video'
   }
 })
 

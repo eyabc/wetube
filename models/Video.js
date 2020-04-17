@@ -18,7 +18,6 @@ const VideoSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  /* how to 2*/
   comments: [
     {
       type: mongoose.Schema.Types.ObjectId,
