@@ -3,7 +3,7 @@ extends layouts/main
 block content
     p VIDEO UPLOAD!
     .form-container
-        form(action=`/videos${routes.videoUpload}`, method="post", enctype="multipart/form-data")
+        form(action=`${routes.videoUpload}`, method="post", enctype="multipart/form-data")
             label(for="file") Video File
             input(type="file", id="file", name="videoFile", required=true, accept="video/*")
             input(type="text", placeholder="Title", name="title", required=true)
