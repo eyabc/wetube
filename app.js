@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import { localsMiddleware } from "./middlewares";
+import { localsMiddleware } from './middlewares';
 
 import routes from './routes';
 import globalRouter from './routers/globalRouter';

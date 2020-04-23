@@ -1,7 +1,7 @@
-import routes from "./routes";
+import routes from './routes';
 import multer from 'multer';
 
-const multerVideo = multer({ dest: 'upload/videos/'});
+const multerVideo = multer({ dest: 'upload/videos/' });
 
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = 'WeTube';
@@ -9,7 +9,7 @@ export const localsMiddleware = (req, res, next) => {
   res.locals.user = {
     authenticated: true,
     id: 1,
-  }
+  };
   next();
 };
 
