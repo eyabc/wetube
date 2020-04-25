@@ -10,10 +10,17 @@ export const home = async (req, res) => {
     res.render('Home', { pageTitle: 'Home', videos: [] });
   }
 };
-export const search = (req, res) => {
-  const { query: { term = searchingFor } } = req;
-  console.log();
-  res.render('Search', { pageTitle: 'Search', searchingFor: term, videos });
+export const search = async (req, res) => {
+  const {
+    query: { term: searchingFor }
+  } = req;
+  let videos = [];
+  try {
+    videos = await Video.find({ title: { $regex: searchingFor, $options: 'i' } });
+  } catch (error) {
+    console.log(error);
+  }
+  res.render('Search', { pageTitle: 'Search', searchingFor, videos: videos });
 };
 export const getVideoUpload = (req, res) => res.render('VideoUpload', { pageTitle: 'VideoUpload' });
 export const postVideoUpload = async (req, res) => {
