@@ -1,15 +1,37 @@
-// webpack.config.js 는 modern js 파일이 아니라서 import를 쓸 수 없다.
-// Node.js에서 파일과 디렉터리 경로를 절대경로로 만들어 주는 방법 path 는 node에 기본적으로 깔려있다.
 const path = require('path');
-// __dirname 은 현재 프로젝트 디렉토리 이름. Node.js의 전역 변수
+const ExtractCSS = require('extract-text-webpack-plugin');
+
+const MODE = process.env.WEBPACK_ENV;
 const ENTRY_FILE = path.resolve(__dirname, 'assets', 'js', 'main.js');
 const OUTPUT_DIR = path.join(__dirname, 'static');
 
 const config = {
   entry: ENTRY_FILE,
+  mode: MODE,
+  module: {
+    rules: [
+      {
+        test: /\.(scss)$/,
+        use: ExtractCSS.extract([
+          {
+            // webpack에게 Css를 가르침
+            loader: 'css-loader',
+          },
+          // sass와 css의 연결고리
+          {
+            loader: 'postcss-loader',
+          },
+          // webpack에게 sass 를 가르침
+          {
+            loader: 'sass-loader',
+          },
+        ]),
+      },
+    ],
+  },
   output: {
     path: OUTPUT_DIR,
-    filename: '[name].[format]'
-  }
-}
+    filename: '[name].[format]',
+  },
+};
 module.exports = config;
