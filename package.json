@@ -5,7 +5,7 @@
   "main": "app.js",
   "author": "eyabc",
   "scripts": {
-    "dev:server": "nodemon --exec babel-node init.js --delay 1",
+    "dev:server": "nodemon --exec babel-node init.js --delay 1 --ignore 'scss'",
     "dev:assets": "WEBPACK_ENV=development webpack -w",
     "build:assets": "WEBPACK_ENV=production webpack"
   },
