@@ -1,5 +1,4 @@
 @import 'config/_variables.sass';
-
-body {
-  color: $bgColor;
-}
+@import 'config/reset.scss';
+@import 'main.scss';
+@import 'partials/header.scss';
